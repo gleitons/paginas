@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginas A4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .a4 {
+            width: 210mm;
+            padding: 10px;
+        }
+
+        .a4 p {
+            line-height: 1.6em;
+            text-align: justify;
+        }
+
+        .headerT {
+            position: relative;
+        }
+
+        .headerT img {
+            width: 210mm;
+            height: 150px;
+        }
+
+        @media print {
+            .headerT {
+                position: fixed;
+            }
+
+            thead {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+    <!-- É algo simples guerreiro, espero que ajude, qualquer coisa me envia um email, hdpd.adm@gmail.com -->
+<body>
+    <table class="a4">
+        <div class="headerT">
+            <img src="./head-exemplo.webp" alt="">
+        </div>
+        <thead>
+            <!-- Essa parte deixei em branco, só coloquei como height 150px ou outro tamanho desejado -->
+        </thead>
+        <tbody>
+            <tr>
+                <td class="conteudo"> 
+                    <!-- O conteudo fica dentro dessa td, todo o conteudo desejado -->
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <script>
+        const conteudo = document.querySelector('.conteudo')
+
+        for (let i = 0; i < 50; i++) {
+            conteudo.innerHTML += `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita autem laudantium, eligendi iusto ex esse repellendus harum est quaerat possimus facere quis doloremque impedit error, aliquid asperiores, aperiam beatae! Possimus.</p>`
+        }
+    </script>
+</body>
+
+</html>
